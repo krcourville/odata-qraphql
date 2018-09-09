@@ -1,0 +1,16 @@
+{
+	"flight-status": [
+		{
+			"flightNo": "ab-101",
+			"statusId": "ON_TIME"
+		},
+		{
+			"flightNo": "ab-102",
+			"statusId": "ON_TIME"
+		},
+		{
+			"flightNo": "ab-103",
+			"statusId": "DELAYED"
+		}
+	]
+}

@@ -1,0 +1,25 @@
+{
+	"name": "odata-qraphql",
+	"version": "1.0.0",
+	"description": "## Questions/Concerns",
+	"main": "index.js",
+	"scripts": {
+		"start": "concurrently npm:api*",
+		"api:flights": "cd microservices/flights && npm install && npm start",
+		"api:flight-status": "cd microservices/flight-status && npm install && npm start",
+		"api:flight-reservations": "cd microservices/flight-reservations && npm install && npm start"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/krcourville/odata-qraphql.git"
+	},
+	"author": "",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/krcourville/odata-qraphql/issues"
+	},
+	"homepage": "https://github.com/krcourville/odata-qraphql#readme",
+	"dependencies": {
+		"concurrently": "^4.0.1"
+	}
+}
