@@ -76,3 +76,18 @@ From [Stack Overflow Developer Survey Results 2018](https://insights.stackoverfl
   + repo activity: > 8 months
   + [documentation](http://odata.github.io/RESTier/)
     - not pretty!
+
+## Test Scenario
+
+### Flight Reservation System
+
+- [ ] View flights
+- [ ] Reserve flights
+- [ ] Review overall flights status
+	- [ ] Provide indicator for My Flights
+
+### Microservices/Api's
+
+* flights: query all flights
+* flight-status: query status for a selection of flights
+* flight-reservations: CRUD for flight reservations
