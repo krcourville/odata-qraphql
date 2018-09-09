@@ -88,6 +88,6 @@ From [Stack Overflow Developer Survey Results 2018](https://insights.stackoverfl
 
 ### Microservices/Api's
 
-* flights: query all flights
-* flight-status: query status for a selection of flights
-* flight-reservations: CRUD for flight reservations
+* `flights`: query all flights
+* `flight-status`: query status for a selection of flights
+* `flight-reservations`: CRUD for flight reservations
