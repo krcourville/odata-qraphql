@@ -79,6 +79,15 @@ From [Stack Overflow Developer Survey Results 2018](https://insights.stackoverfl
 
 ## Test Scenario
 
+### Getting Started
+
+NOTE: Requires Node JS (Tested with 10.7.0)
+
+```
+  npm install
+  npm start
+```
+
 ### Flight Reservation System
 
 - [ ] View flights
