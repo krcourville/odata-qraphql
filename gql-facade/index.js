@@ -15,15 +15,33 @@ const schema = buildSchema(`
 		flightNo: ID!
 		start: FlightConnection!
 		end: FlightConnection!
+		status : FlightStatus!
 	}
 
+	enum FlightStatusId {
+		ON_TIME,
+		DELAYED
+	}
+
+	type FlightStatus {
+		flightNo: ID!,
+		statusId: FlightStatusId!
+	}
+
+	"Flight System Root Query"
 	type Query {
+		"All flights"
 		flights: [Flight!]!
+		flightStatus: [FlightStatus]!
 	}
 `);
 
 const root = {
 	flights: () => fetch('http://localhost:4000/flights/')
+		.then(res => res.json()),
+
+
+	flightStatus: () => fetch('http://localhost:4001/flight-status')
 		.then(res => res.json())
 };
 
