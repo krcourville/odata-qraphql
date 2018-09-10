@@ -1,21 +1,39 @@
-var express = require('express');
-var graphqlHTTP = require('express-graphql');
-var { buildSchema } = require('graphql');
+const express = require('express');
+const graphqlHTTP = require('express-graphql');
+const { buildSchema } = require('graphql');
+const fetch = require('node-fetch');
 
-var schema = buildSchema(`
-  type Query {
-    hello: String
-  }
+const schema = buildSchema(`
+	scalar Date
+
+	type FlightConnection {
+		airportCode: String!
+		time: Date!
+	}
+
+	type Flight {
+		flightNo: ID!
+		start: FlightConnection!
+		end: FlightConnection!
+	}
+
+	type Query {
+		flights: [Flight!]!
+	}
 `);
 
-var root = { hello: () => 'Hello world!' };
+const root = {
+	flights: () => fetch('http://localhost:4000/flights/')
+		.then(res => res.json())
+};
 
-var app = express();
+const app = express();
 app.use('/graphql', graphqlHTTP({
 	schema: schema,
 	rootValue: root,
 	graphiql: true,
 }));
+
 const Port = 5000;
 
 app.listen(Port, () => console.log(

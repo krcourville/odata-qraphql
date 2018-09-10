@@ -21,6 +21,7 @@
 	},
 	"homepage": "https://github.com/krcourville/odata-qraphql#readme",
 	"dependencies": {
-		"concurrently": "^4.0.1"
+		"concurrently": "^4.0.1",
+		"node-fetch": "^2.2.0"
 	}
 }
