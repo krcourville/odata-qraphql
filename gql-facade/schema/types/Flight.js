@@ -6,7 +6,7 @@ const Flight = `
         flightNo: ID!
         start: FlightConnection!
         end: FlightConnection!
-        status : FlightStatus!
+        flightStatus : FlightStatus!
     }
 `;
 

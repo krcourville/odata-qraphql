@@ -17,8 +17,15 @@ class FlightStatusAPI extends RESTDataSource {
         this.baseURL = 'http://localhost:4001/flight-status';
     }
 
-    async getAll() {
-        return this.get('');
+    async find({flightNo = null} = {}) {
+        return this.get('', {
+            flightNo
+        });
+    }
+
+    async findOne(params) {
+        const items = await this.find(params);
+        return items[0];
     }
 }
 

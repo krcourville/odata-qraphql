@@ -5,8 +5,12 @@ const RootQuery = `
     "Flight System Root Query"
     type RootQuery {
         "All flights"
-        flights: [Flight!]!
-        flightStatus: [FlightStatus]!
+        getFlights: [Flight!]!
+
+        getFlightStatuses: [FlightStatus]!
+
+        getFlightStatus(flightNo: String): FlightStatus!
+
     }
 `;
 
