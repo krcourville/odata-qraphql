@@ -1,37 +1,21 @@
 const { makeExecutableSchema } = require('graphql-tools');
 
-const Flight = require('./Flight');
-const FlightStatus = require('./FlightStatus');
-
-const Query = `
-    "Flight System Root Query"
-    type Query {
-        "All flights"
-        flights: [Flight!]!
-        flightStatus: [FlightStatus]!
-    }
-`;
-
-const SchemaDefinition = `
-    schema {
-        query: Query
-    }
-`;
+const { SchemaDefinition } = require('./types');
 
 // TODO: use Apollo fetching framework and put this elsewhere
-const fetch = require('node-fetch');
 const resolvers = {
-	Query: {
-		flights: () => fetch('http://localhost:4000/flights/')
-			.then(res => res.json()),
+	RootQuery: {
+        flights: (_source, _params, {dataSources}) => {
+            return dataSources.flightsApi.getAll()
+        },
 
-
-		flightStatus: () => fetch('http://localhost:4001/flight-status')
-			.then(res => res.json())
+        flightStatus: (_source, _params, {dataSources}) => {
+            return dataSources.flightStatusApi.getAll();
+        }
 	}
 };
 
 module.exports = makeExecutableSchema({
-    typeDefs: [SchemaDefinition, Query, ...Flight, ...FlightStatus],
+    typeDefs: [...SchemaDefinition],
     resolvers
 });
