@@ -34,6 +34,14 @@ From [Stack Overflow Developer Survey Results 2018](https://insights.stackoverfl
   + [documentation](https://graphql.org/graphql-js/)
   + Used as reference for other implementations
   + repo activity: recent < 24 hours
+* Apollo Server
+  + <https://github.com/graphql/graphql-js/>
+  + javascript, nodejs
+  + 5105 stars
+  + 202 issues
+  + [documentation](https://www.apollographql.com/docs/apollo-server/)
+  + repo activity: recent < 24 hours  
+  + production ready server; better documented and targeted at being a middleware
 * GraphQL Java
   + <https://github.com/graphql-java/graphql-java>
   + java
