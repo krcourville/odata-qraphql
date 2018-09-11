@@ -1,6 +1,7 @@
 const { makeExecutableSchema } = require('graphql-tools');
 
 const { SchemaDefinition } = require('./types');
+const typeDefs = [...SchemaDefinition];
 
 // TODO: use Apollo fetching framework and put this elsewhere
 const resolvers = {
@@ -16,6 +17,6 @@ const resolvers = {
 };
 
 module.exports = makeExecutableSchema({
-    typeDefs: [...SchemaDefinition],
+    typeDefs,
     resolvers
 });
