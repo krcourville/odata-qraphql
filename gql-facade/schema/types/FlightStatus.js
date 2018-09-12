@@ -3,7 +3,8 @@ const FlightStatusId = require('./FlightStatusId');
 const FlightStatus = `
     type FlightStatus {
         flightNo: ID!,
-        id: FlightStatusId!
+		id: FlightStatusId!,
+		name: String!
     }
 `;
 

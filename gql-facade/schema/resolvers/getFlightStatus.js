@@ -5,6 +5,7 @@ module.exports = async (source, params, { dataSources }) => {
 			flightNo: source.flightNo
 		});
 	return {
-		id: flightStatus.statusId
+		id: flightStatus.statusId,
+		name: flightStatus.statusName
 	};
 };

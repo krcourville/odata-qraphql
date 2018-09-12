@@ -2,15 +2,18 @@
 	"flight-status": [
 		{
 			"flightNo": "ab-101",
-			"statusId": "ON_TIME"
+			"statusId": "ON_TIME",
+			"statusName": "On Time"
 		},
 		{
 			"flightNo": "ab-102",
-			"statusId": "ON_TIME"
+			"statusId": "ON_TIME",
+			"statusName": "On Time"
 		},
 		{
 			"flightNo": "ab-103",
-			"statusId": "DELAYED"
+			"statusId": "DELAYED",
+			"statusName": "Delayed"
 		}
 	]
 }
