@@ -1,7 +1,8 @@
 const FlightStatusId = `
     enum FlightStatusId {
         ON_TIME,
-        DELAYED
+		DELAYED,
+		UNKNOWN
     }
 `;
 

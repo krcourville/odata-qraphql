@@ -32,6 +32,17 @@
 				"airportCode": "SEA",
 				"time": "2018-01-02T16:45:00.001Z"
 			}
+		},
+		{
+			"flightNo": "ab-104",
+			"start": {
+				"airportCode": "DEN",
+				"time": "2018-01-02T18:15:00.001Z"
+			},
+			"end": {
+				"airportCode": "SEA",
+				"time": "2018-01-02T19:45:00.001Z"
+			}
 		}
 	]
 }
