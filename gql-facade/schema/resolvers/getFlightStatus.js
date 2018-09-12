@@ -1,3 +1,10 @@
-module.exports = (_source, _params, {dataSources}) => {
-    return dataSources.flightStatusApi.findOne(_params);
+module.exports = async (source, params, { dataSources }) => {
+	const flightStatus = await dataSources
+		.flightStatusApi
+		.findOne({
+			flightNo: source.flightNo
+		});
+	return {
+		id: flightStatus.statusId
+	};
 };

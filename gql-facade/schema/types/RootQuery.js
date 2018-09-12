@@ -7,11 +7,10 @@ const RootQuery = `
         "All flights"
         getFlights: [Flight!]!
 
-        getFlightStatuses: [FlightStatus]!
+        #getFlightStatuses: [FlightStatus]!
 
-        getFlightStatus(flightNo: String): FlightStatus!
-
-    }
+        #getFlightStatus(flightNo: String): FlightStatus!
+	}
 `;
 
 module.exports = [RootQuery, ...Flight, ...FlightStatus];
