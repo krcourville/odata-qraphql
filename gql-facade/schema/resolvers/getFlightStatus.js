@@ -4,8 +4,5 @@ module.exports = async (source, params, { dataSources }) => {
 		.findOne({
 			flightNo: source.flightNo
 		});
-	return {
-		id: flightStatus.statusId,
-		name: flightStatus.statusName
-	};
+	return flightStatus.statusId;
 };

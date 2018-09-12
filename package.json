@@ -8,7 +8,8 @@
 		"api:flights": "cd microservices/flights && npm install && npm start",
 		"api:flight-status": "cd microservices/flight-status && npm install && npm start",
 		"api:flight-reservations": "cd microservices/flight-reservations && npm install && npm start",
-		"api:gql-facade": "cd gql-facade && npm install && npm start"
+		"api:gql-facade": "cd gql-facade && npm install && npm start",
+		"api:cms": "cd microservices/cms && npm install && npm start"
 	},
 	"repository": {
 		"type": "git",

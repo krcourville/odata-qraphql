@@ -29,11 +29,30 @@ class FlightStatusAPI extends RESTDataSource {
 	}
 }
 
+class CmsAPI extends RESTDataSource {
+	constructor() {
+		super();
+		this.baseURL = 'http://localhost:4003/messages';
+	}
+
+	async find({ id = null } = {}) {
+		return this.get('', {
+			id
+		});
+	}
+
+	async findOne(params) {
+		const items = await this.find(params);
+		return items[0];
+	}
+}
+
 module.exports = {
 	FlightsAPI,
 	FlightStatusAPI,
 	get: () => ({
 		flightsApi: new FlightsAPI(),
-		flightStatusApi: new FlightStatusAPI()
+		flightStatusApi: new FlightStatusAPI(),
+		cmsApi: new CmsAPI()
 	})
 }

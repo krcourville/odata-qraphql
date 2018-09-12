@@ -1,0 +1,14 @@
+{
+	"messages": [
+		{
+			"id": "FLIGHT_STATUS_ON_TIME",
+			"lang": "en",
+			"message": "On Time"
+		},
+		{
+			"id": "FLIGHT_STATUS_DELAYED",
+			"lang": "en",
+			"message": "Delayed"
+		}
+	]
+}
