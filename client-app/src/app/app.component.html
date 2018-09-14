@@ -1,6 +1,10 @@
-<div>
+<div class="container">
   <h2>Flights App</h2>
 
-  <app-flight-list [items]="flights"></app-flight-list>
+  <ul class="nav">
+    <li class="nav-item">
+      <app-login-status [isAuthenticated]="isAuthenticated" [userId]="userId" (loginClick)="onLoginClick()"></app-login-status>
+    </li>
+  </ul>
 
-</div>
+  <app-flight-list [items]="flights"></app-flight-list>

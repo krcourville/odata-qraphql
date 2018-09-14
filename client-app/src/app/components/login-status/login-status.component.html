@@ -1,0 +1,8 @@
+<span>
+  <span *ngIf="!isAuthenticated">
+    <a class="nav-link" href="javascript:void" (click)="onLoginClick()">Login</a>
+  </span>
+  <span *ngIf="isAuthenticated">
+    Hello, {{userId}}...
+  </span>
+</span>
