@@ -1,26 +1,43 @@
+const express = require('express');
 const Provider = require('oidc-provider');
-const configuration = {
 
-};
+const app = express();
+
 const clients = [{
 	client_id: 'client-app',
-	client_secret: 'secret',
+	grant_types: ['implicit'],
+	response_types: ['id_token'],
+	token_endpoint_auth_method: 'none',
 	redirect_uris: [
-		'http://localhost:4200/after-login'
+		'https://testapp:4200/signin-oidc'
 	]
 }];
 
-const Port = 3000;
-const oidc = new Provider(`http://localhost:${Port}`, configuration);
+// http://localhost:3000/auth?client_id=client-app&redirect_uri=https://testapp:4200/signin-oidc&response_type=id_token&scope=openid&nonce=123&state=321
 
-let server;
-(async () => {
-	await oidc.initialize({ clients });
-	server = oidc.listen(Port, () => {
-		console.log(`oidc-provider listening on port ${Port}, check http://localhost:3000/.well-known/openid-configuration`);
+const findById = async (ctx, id) => {
+	console.log('FIND_BY_ID', ctx, id);
+	return {
+		accountId: id,
+		async claims() {
+			return {
+				sub: id
+			};
+		}
+	};
+}
+
+const Port = 3000;
+
+const oidc = new Provider(`http://localhost:${Port}`);
+const oidcConfig = {
+	clients,
+	findById
+};
+oidc.initialize(oidcConfig).then(function () {
+	app.use('/', oidc.callback);
+	app.listen(Port, () => {
+		console.log(`oidc-provider listening on port ${Port}, check http://localhost:${Port}/.well-known/openid-configuration`);
+
 	});
-})().catch((err) => {
-	if (server && server.listening) server.close();
-	console.error(err);
-	process.exitCode = 1;
 });

@@ -96,6 +96,9 @@ NOTE: Requires Node JS (Tested with 10.7.0)
   npm start
 ```
 
+For the client app, Auth server requires a non "localhost"
+address with https.  Add a hosts file entry of `testapp`.
+
 ### Flight Reservation System
 
 - [ ] View flights
