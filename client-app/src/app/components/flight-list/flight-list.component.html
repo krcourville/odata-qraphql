@@ -1,14 +1,15 @@
 <div class="table-responsive">
 
-  <table class="table">
-    <thead>
+  <table class="table table-hover table-bordered ">
+    <thead class="thead-light">
       <tr>
-        <td>Flight #</td>
-        <td>From</td>
-        <td>Depart</td>
-        <td>To</td>
-        <td>Arrive</td>
-        <td>Status</td>
+        <th>Flight #</th>
+        <th>From</th>
+        <th>Depart</th>
+        <th>To</th>
+        <th>Arrive</th>
+        <th>Status</th>
+        <th class="text-center">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +20,9 @@
         <td>{{item.end.airportCode}}</td>
         <td>{{item.end.time | date:'shortTime'}}</td>
         <td>{{item.status}}</td>
+        <td class="text-center">
+          <button class="btn btn-link">Reserve</button>
+        </td>
       </tr>
     </tbody>
   </table>
