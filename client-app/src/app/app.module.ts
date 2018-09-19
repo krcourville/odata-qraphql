@@ -8,27 +8,23 @@ import { AppComponent } from './app.component';
 import { ApiClientService } from './services/api-client.service';
 import { FlightListComponent } from './components/flight-list/flight-list.component';
 import { LoginStatusComponent } from './components/login-status/login-status.component';
-import { LoginPromptComponent } from './components/login-prompt/login-prompt.component';
 import { DashboardPageComponent } from './containers/dashboard-page/dashboard-page.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { SigninOidcComponent } from './containers/signin-oidc/signin-oidc.component';
+import { OidcGuard } from './services/oidc.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     FlightListComponent,
     LoginStatusComponent,
-    LoginPromptComponent,
-    DashboardPageComponent
-  ],
-  entryComponents: [
-    LoginPromptComponent
+    DashboardPageComponent,
+    SigninOidcComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    RouterModule,
     AppRoutingModule,
     HttpClientModule,
     ModalModule.forRoot(),

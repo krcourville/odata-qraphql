@@ -16,6 +16,9 @@ export class LoginStatusComponent implements OnInit {
   @Output()
   loginClick = new EventEmitter();
 
+  @Output()
+  logoutClick = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
@@ -23,6 +26,10 @@ export class LoginStatusComponent implements OnInit {
 
   onLoginClick() {
     this.loginClick.emit();
+  }
+
+  onLogoutClick() {
+    this.logoutClick.emit();
   }
 
 }

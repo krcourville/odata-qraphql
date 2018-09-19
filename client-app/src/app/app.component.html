@@ -3,7 +3,9 @@
 
   <ul class="nav">
     <li class="nav-item">
-      <app-login-status [isAuthenticated]="isAuthenticated" [userId]="userId" (loginClick)="onLoginClick()"></app-login-status>
+      <app-login-status [isAuthenticated]="isAuthenticated" [userId]="userId" (loginClick)="onLoginClick()"
+        (logoutClick)="onLogoutClick()">
+      </app-login-status>
     </li>
   </ul>
 
