@@ -92,6 +92,13 @@ From [Stack Overflow Developer Survey Results 2018](https://insights.stackoverfl
 NOTE: Requires Node JS (Tested with 10.7.0)
 
 ```
+  # starts all the api's
+  npm install
+  npm start
+
+  # in another terminal, start the client app
+  # NOTE: Must add `testapp` to your hosts file, pointed to 127.0.0.1
+  cd oid
   npm install
   npm start
 ```
