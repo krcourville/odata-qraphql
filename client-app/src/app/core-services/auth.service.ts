@@ -26,7 +26,9 @@ export class AuthService {
 
   async loadPreviousLogin() {
     const user = await this.userManager.getUser();
-    this.loadUser(user);
+    if (user != null) {
+      this.loadUser(user);
+    }
   }
 
   get isAuthenticated() {

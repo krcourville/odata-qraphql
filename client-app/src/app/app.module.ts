@@ -5,22 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
-import { ApiClientService } from './services/api-client.service';
-import { FlightListComponent } from './components/flight-list/flight-list.component';
-import { LoginStatusComponent } from './components/login-status/login-status.component';
-import { DashboardPageComponent } from './containers/dashboard-page/dashboard-page.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { CommonModule } from '@angular/common';
-import { SigninOidcComponent } from './containers/signin-oidc/signin-oidc.component';
-import { OidcGuard } from './services/oidc.guard';
+import { ComponentsModule } from './components/components.module';
+import { CoreServicesModule } from './core-services';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FlightListComponent,
-    LoginStatusComponent,
-    DashboardPageComponent,
-    SigninOidcComponent
   ],
   imports: [
     BrowserModule,
@@ -28,9 +20,9 @@ import { OidcGuard } from './services/oidc.guard';
     AppRoutingModule,
     HttpClientModule,
     ModalModule.forRoot(),
-  ],
-  providers: [
-    ApiClientService
+    ComponentsModule,
+    CoreServicesModule,
+    ComponentsModule
   ],
   bootstrap: [AppComponent]
 })

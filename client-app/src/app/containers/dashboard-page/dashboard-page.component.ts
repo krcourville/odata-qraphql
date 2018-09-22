@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FlightResponse } from '../../interfaces';
-import { ApiClientService } from '../../services/api-client.service';
-import { BsModalService } from 'ngx-bootstrap/modal';
-import { AuthService } from '../../services/auth.service';
 import { AllFlights } from '../../queries';
+import { ApiClientService } from '../../core-services';
 
 @Component({
   selector: 'app-dashboard-page',

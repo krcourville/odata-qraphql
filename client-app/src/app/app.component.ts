@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FlightResponse } from './interfaces';
-import { AuthService } from './services/auth.service';
+import { AuthService } from './core-services';
 
 @Component({
   selector: 'app-root',
