@@ -108,9 +108,9 @@ address with https.  Add a hosts file entry of `testapp`.
 
 ### Flight Reservation System
 
-- [ ] View flights
+- [x] View flights
 - [ ] Reserve flights
-- [ ] Review overall flights status
+- [x] Review overall flights status
 	- [ ] Provide indicator for My Flights
 
 ### Microservices/Api's
