@@ -5,6 +5,6 @@ const resolvers = require('./resolvers');
 const typeDefs = [...SchemaDefinition];
 
 module.exports = makeExecutableSchema({
-    typeDefs,
-    resolvers
+	typeDefs,
+	resolvers,
 });

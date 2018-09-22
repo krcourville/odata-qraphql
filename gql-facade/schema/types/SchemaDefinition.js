@@ -1,9 +1,11 @@
 const RootQuery = require('./RootQuery');
+const Mutation = require('./Mutation');
 
 const SchemaDefinition = `
     schema {
-        query: RootQuery
+		query: RootQuery
+		mutation: Mutation
     }
 `;
 
-module.exports = [SchemaDefinition, ...RootQuery];
+module.exports = [SchemaDefinition, ...RootQuery, ...Mutation];

@@ -1,3 +1,9 @@
 {
-	"flight-reservations": []
+  "flight-reservations": [
+    {
+      "flightNo": "ABC",
+      "userId": "Joe",
+      "id": 1
+    }
+  ]
 }
