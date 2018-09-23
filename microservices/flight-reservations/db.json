@@ -4,6 +4,11 @@
       "flightNo": "ABC",
       "userId": "Joe",
       "id": 1
+    },
+    {
+      "flightNo": "123",
+      "userId": "user",
+      "id": 2
     }
   ]
 }

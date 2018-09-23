@@ -29,6 +29,26 @@ class FlightStatusAPI extends RESTDataSource {
 	}
 }
 
+class FlightReservationAPI extends RESTDataSource {
+	constructor() {
+		super();
+		this.baseURL = 'http://localhost:4002/flight-reservations';
+	}
+
+	create({ flightNo = null, userId = null } = {}) {
+		if (flightNo == null) {
+			throw new Error('flightNo is required');
+		}
+		if (userId == null) {
+			throw new Error('userId is required');
+		}
+		return this.post('', {
+			flightNo,
+			userId
+		});
+	}
+}
+
 class CmsAPI extends RESTDataSource {
 	constructor() {
 		super();
@@ -53,6 +73,7 @@ module.exports = {
 	get: () => ({
 		flightsApi: new FlightsAPI(),
 		flightStatusApi: new FlightStatusAPI(),
-		cmsApi: new CmsAPI()
+		cmsApi: new CmsAPI(),
+		flightReservationsApi: new FlightReservationAPI()
 	})
 }

@@ -1,0 +1,44 @@
+"Flight System Root Query"
+type RootQuery {
+	"All flights"
+	getFlights: [Flight!]!
+
+	"Instantly (somehow?) reserve a seat on a flight"
+	reserveFlight(flightNo: String!, userId: String!): FlightReservation!
+}
+
+schema {
+	query: RootQuery
+}
+
+scalar Date
+
+type FlightConnection {
+	airportCode: String!
+	time: Date!
+}
+
+type FlightReservation {
+	userId: String!
+	flightNo: String!
+}
+
+type FlightStatus {
+	flightNo: ID!,
+	id: FlightStatusId!,
+	name: String!
+}
+
+enum FlightStatusId {
+	ON_TIME,
+	DELAYED,
+	UNKNOWN
+}
+
+type Flight {
+	flightNo: ID!
+	start: FlightConnection!
+	end: FlightConnection!
+	statusId : FlightStatusId!
+	status: String!
+}

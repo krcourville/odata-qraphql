@@ -1,8 +1,10 @@
+const fs = require('fs');
+const path = require('path');
+
 const { makeExecutableSchema } = require('graphql-tools');
 
-const { SchemaDefinition } = require('./types');
 const resolvers = require('./resolvers');
-const typeDefs = [...SchemaDefinition];
+const typeDefs = fs.readFileSync(path.join(__dirname, 'schema.graphql'), 'utf8');
 
 module.exports = makeExecutableSchema({
 	typeDefs,
