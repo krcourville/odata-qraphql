@@ -3,6 +3,7 @@ import { ApiClientService } from './api-client.service';
 import { AuthService } from './auth.service';
 import { OidcGuard } from './oidc.guard';
 import { HttpClientModule } from '@angular/common/http';
+import { FlightsStoreService } from './flights-store.service';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     ApiClientService,
     AuthService,
-    OidcGuard
+    OidcGuard,
+    FlightsStoreService
   ]
 })
 export class CoreServicesModule { }

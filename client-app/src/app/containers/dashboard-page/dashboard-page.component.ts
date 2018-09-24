@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FlightResponse } from '../../interfaces';
-import { AllFlights } from '../../queries';
 import { ApiClientService } from '../../core-services';
+import { FlightsStoreService } from '../../core-services/flights-store.service';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -10,16 +10,16 @@ import { ApiClientService } from '../../core-services';
 })
 export class DashboardPageComponent implements OnInit {
 
-  flights: FlightResponse[];
+  flights$: Observable<FlightResponse[]>;
 
   constructor(
-    private apiClient: ApiClientService
-  ) { }
+    private store: FlightsStoreService
+  ) {
+    this.flights$ = this.store.flights$;
+  }
 
   ngOnInit(): void {
-    this.apiClient
-      .query(AllFlights)
-      .subscribe(res => this.flights = res.data.getFlights);
+    this.store.load();
   }
 
 }
