@@ -21,7 +21,7 @@
         <td>{{item.end.airportCode}}</td>
         <td>{{item.status}}</td>
         <td class="text-center">
-          <button appDisableNoLogin class="btn btn-link">Reserve</button>
+          <button appDisableNoLogin class="btn btn-link" (click)="onReserveClick(item)">Reserve</button>
         </td>
       </tr>
     </tbody>

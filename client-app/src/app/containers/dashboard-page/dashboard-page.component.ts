@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import { FlightResponse } from '../../interfaces';
-import { ApiClientService } from '../../core-services';
 import { FlightsStoreService } from '../../core-services/flights-store.service';
+import { FlightAction } from '../../components';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -20,6 +22,15 @@ export class DashboardPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.load();
+  }
+
+  onFlightAction(action: FlightAction) {
+    switch (action.type) {
+      case 'REQUEST_RESERVATION': {
+        console.log('TODO', action.flight);
+        break;
+      }
+    }
   }
 
 }

@@ -1,1 +1,2 @@
-<app-flight-list [items]="flights$ | async"></app-flight-list>
+<app-flight-list [items]="flights$ | async" (action)="onFlightAction($event)">
+</app-flight-list>
