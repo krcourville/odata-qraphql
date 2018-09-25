@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { FlightResponse } from '../../interfaces';
 import { FlightsStoreService } from '../../core-services/flights-store.service';
 import { FlightAction } from '../../components';
+import { AuthService } from '../../core-services';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -15,7 +16,8 @@ export class DashboardPageComponent implements OnInit {
   flights$: Observable<FlightResponse[]>;
 
   constructor(
-    private store: FlightsStoreService
+    private store: FlightsStoreService,
+    private auth: AuthService
   ) {
     this.flights$ = this.store.flights$;
   }
@@ -27,7 +29,10 @@ export class DashboardPageComponent implements OnInit {
   onFlightAction(action: FlightAction) {
     switch (action.type) {
       case 'REQUEST_RESERVATION': {
-        console.log('TODO', action.flight);
+        this.store.reserveFlight({
+          userId: this.auth.userId,
+          flightNo: action.flight.flightNo
+        });
         break;
       }
     }

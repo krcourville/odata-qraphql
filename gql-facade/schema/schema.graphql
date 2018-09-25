@@ -1,14 +1,14 @@
 "Flight System Root Query"
-type RootQuery {
+type Query {
 	"All flights"
-	getFlights: [Flight!]!
-
-	"Instantly (somehow?) reserve a seat on a flight"
-	reserveFlight(flightNo: String!, userId: String!): FlightReservation!
+	flights: [Flight!]!
 }
 
-schema {
-	query: RootQuery
+type Mutation {
+	reserveFlight(
+		flightNo: String!,
+		userId: String!
+	): FlightReservation!
 }
 
 scalar Date
@@ -19,6 +19,7 @@ type FlightConnection {
 }
 
 type FlightReservation {
+	id: String!
 	userId: String!
 	flightNo: String!
 }

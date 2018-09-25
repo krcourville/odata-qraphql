@@ -13,6 +13,6 @@ export interface FlightResponse {
 
 export interface ApiResponse {
   data: {
-    getFlights: FlightResponse[];
-  }
+    flights: FlightResponse[];
+  };
 }

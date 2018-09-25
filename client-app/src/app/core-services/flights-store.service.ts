@@ -10,6 +10,7 @@ import { ApiResponse, FlightResponse } from '../interfaces';
 })
 export class FlightsStoreService {
 
+
   private _store$ = new BehaviorSubject<ApiResponse>(null);
 
   constructor(
@@ -22,7 +23,7 @@ export class FlightsStoreService {
       map(store => {
         return store == null ?
           [] :
-          store.data.getFlights;
+          store.data.flights;
       })
     );
   }
@@ -31,7 +32,7 @@ export class FlightsStoreService {
     this.apiClient
       .query(`
       {
-        getFlights{
+        flights{
           flightNo
           start {
             airportCode
@@ -47,5 +48,18 @@ export class FlightsStoreService {
       }
     `)
       .subscribe(res => this._store$.next(res));
+  }
+
+  reserveFlight(options: { userId: string; flightNo: string; }): any {
+    const variables = options;
+    this.apiClient.query(`
+      mutation {
+        reserveFlight(flightNo: $flightNo, userId: $userId) {
+          id
+          userId
+          flightNo
+        }
+      }
+    `, variables);
   }
 }

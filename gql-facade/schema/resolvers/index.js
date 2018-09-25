@@ -3,8 +3,11 @@ const getFlightStatus = require('./getFlightStatus');
 const reserveFlight = require('./reserveFlight');
 
 const resolvers = {
-	RootQuery: {
-		getFlights,
+	Query: {
+		flights: getFlights,
+	},
+
+	Mutation: {
 		reserveFlight
 	},
 
